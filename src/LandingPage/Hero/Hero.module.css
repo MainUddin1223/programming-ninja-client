@@ -1,0 +1,33 @@
+.container {
+  padding: 10px 20px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.slogan_container {
+  text-align: center;
+  width: 75%;
+  position: absolute;
+  z-index: 99;
+}
+.slogan {
+  font-size: 3rem;
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 75px;
+}
+.start_btn {
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
