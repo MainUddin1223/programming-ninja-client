@@ -29,9 +29,10 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
               },
             },
             token: {
-              colorBgContainer: "#070d17",
+              //   colorBgContainer: "#070d17",
               borderRadius: 0,
-              colorText: "rgb(224, 223, 223)",
+              // colorText: "rgb(224, 223, 223)",
+              colorPrimary: "#5942cb",
             },
           }}
         >

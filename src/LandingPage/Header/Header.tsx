@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Styles from "./Header.module.css";
 
 const Header = () => {
@@ -7,9 +8,9 @@ const Header = () => {
         <h1>Programming Ninja</h1>
         <div className={Styles.header_btn_grp}>
           <button className={Styles.header_btn}>Get Started</button>
-          <a href="/login">
+          <Link href="/login">
             <button className={Styles.header_btn}>Login</button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

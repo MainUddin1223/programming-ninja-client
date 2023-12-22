@@ -10,10 +10,10 @@
   transform: translate(-50%, -50%);
 }
 .input_div {
-  width: 75%;
+  width: 100%;
   margin: 10px auto;
 }
-.login_btn {
+.signUp_btn {
   display: block;
   margin: 20px auto;
   /* background-image: var(--primary); */
@@ -24,15 +24,4 @@
   font-size: 17px;
   border: none;
   cursor: pointer;
-}
-.disabled_btn {
-  display: block;
-  margin: 20px auto;
-  color: rgb(222, 207, 207);
-  padding: 10px 30px;
-  font-weight: bold;
-  font-size: 17px;
-  border: none;
-  background-color: #6b727e;
-  cursor: not-allowed;
 }
