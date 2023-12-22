@@ -27,9 +27,17 @@
   height: 100%;
   background-color: var(--secondary);
 }
+
+.sidebar_container::-webkit-scrollbar {
+  width: 0px;
+}
+
 .children_container {
   overflow-y: scroll;
   height: 100%;
   width: 75%;
   background-color: var(--secondary);
+}
+.children_container::-webkit-scrollbar {
+  width: 0px;
 }
