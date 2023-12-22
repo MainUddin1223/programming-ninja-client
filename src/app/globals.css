@@ -1,6 +1,7 @@
 :root {
   /* --primary: linear-gradient(to right, #4816c6, #5e43cb, #3f5bae, #632795); */
   --primary: linear-gradient(to left, #9930ef, #5942cb, #795ceb);
+  --secondary: rgb(59, 17, 98);
 }
 * {
   box-sizing: border-box;

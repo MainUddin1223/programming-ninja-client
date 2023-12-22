@@ -1,0 +1,35 @@
+.layout_container {
+}
+.nav_container {
+  padding: 10px 20px;
+  background-color: var(--secondary);
+}
+.nav_items_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content_section {
+  position: absolute;
+  top: 85px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+.content_container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+.sidebar_container {
+  width: 25%;
+  overflow-y: scroll;
+  height: 100%;
+  background-color: var(--secondary);
+}
+.children_container {
+  overflow-y: scroll;
+  height: 100%;
+  width: 75%;
+  background-color: var(--secondary);
+}

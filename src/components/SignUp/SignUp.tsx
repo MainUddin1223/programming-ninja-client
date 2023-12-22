@@ -31,6 +31,7 @@ const SignUp = () => {
         typeof window !== "undefined" &&
           localStorage.setItem("accessToken", accessToken);
         const authInfo: any = getAuthInfo();
+        router.push(`${authInfo?.role}/`);
         setIsLoading(false);
       } else {
         setIsLoading(false);
