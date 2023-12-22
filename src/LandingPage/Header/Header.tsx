@@ -1,4 +1,3 @@
-import { Button, Flex } from "antd";
 import Styles from "./Header.module.css";
 
 const Header = () => {
@@ -8,7 +7,9 @@ const Header = () => {
         <h1>Programming Ninja</h1>
         <div className={Styles.header_btn_grp}>
           <button className={Styles.header_btn}>Get Started</button>
-          <button className={Styles.header_btn}>Login</button>
+          <a href="/login">
+            <button className={Styles.header_btn}>Login</button>
+          </a>
         </div>
       </div>
     </div>

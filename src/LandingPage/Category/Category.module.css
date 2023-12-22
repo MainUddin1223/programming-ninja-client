@@ -1,0 +1,21 @@
+.container {
+  padding: 10px 20px;
+  width: 75%;
+  margin: 50px auto;
+}
+.category_header {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+.category_card {
+  background-image: var(--primary);
+  padding: 20px;
+  text-align: center;
+  border: solid rgb(255, 255, 255) 1px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.category_card:hover {
+  box-shadow: #5942cb6c 0px 3px 12px;
+}
