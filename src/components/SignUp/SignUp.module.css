@@ -25,3 +25,14 @@
   border: none;
   cursor: pointer;
 }
+.disabled_btn {
+  display: block;
+  margin: 20px auto;
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  background-color: #6b727e;
+  cursor: not-allowed;
+}

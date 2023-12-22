@@ -1,55 +1,54 @@
 "use client";
-import { Card, Input, Modal, Spin, message } from "antd";
+import { Card, Input, Modal, message } from "antd";
 import Styles from "./Login.module.css";
 import BackButton from "../BackButton/BackButton";
 import Link from "next/link";
 import { useState } from "react";
 import { useUserLoginMutation } from "@/redux/api/authApi";
-import { decodeToken, getAuthInfo } from "@/utils/jwt";
+import { getAuthInfo } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
 import Loader from "../Loader/Loader";
 
 const LoginComponent = () => {
-	const [isLoading, setIsLoading] = useState(false);
-	const router = useRouter();
-	const [userLogin] = useUserLoginMutation();
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const [userLogin] = useUserLoginMutation();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
-  const handleLogin = async() => {
+  const handleLogin = async () => {
     try {
-		setIsLoading(true);
-		const res = await userLogin({ ...loginData }).unwrap();
-		if (res.success) {
-				message.success('User logged in successfully');
-				const accessToken = res?.accessToken;
-				typeof window !== 'undefined' && localStorage.setItem('accessToken',accessToken);
-			const authInfo: any = getAuthInfo();
-			console.log(authInfo)
-			setIsLoading(false);
-		} else {
-			setIsLoading(false);
-				Modal.error({
-					content: res.message || 'Failed to login',
-				});
-		}
-		setLoginData({email: "",
-			password: "",})
-	} catch (error) {
-		console.log(error);
-			setIsLoading(false);
-				Modal.error({
-					content:'Failed to login',
-				});
-	}
+      setIsLoading(true);
+      const res = await userLogin({ ...loginData }).unwrap();
+      if (res.success) {
+        message.success("User logged in successfully");
+        const accessToken = res?.accessToken;
+        typeof window !== "undefined" &&
+          localStorage.setItem("accessToken", accessToken);
+        const authInfo: any = getAuthInfo();
+        setIsLoading(false);
+      } else {
+        setIsLoading(false);
+        Modal.error({
+          content: res.message || "Failed to login",
+        });
+      }
+      setLoginData({ email: "", password: "" });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+      Modal.error({
+        content: "Failed to login",
+      });
+    }
   };
   return (
     <div className={Styles.container}>
       <BackButton />
-		  <div className={Styles.card_container}>
-			  {isLoading && <Loader />}
+      <div className={Styles.card_container}>
+        {isLoading && <Loader />}
         <Card
           style={{
             backgroundImage: "var(--primary)",
@@ -64,8 +63,8 @@ const LoginComponent = () => {
               <p style={{ padding: "10px 0", fontSize: "17px" }}>User email</p>
               <Input
                 placeholder="john@gmail.com"
-							  type="email"
-							  value={loginData.email}
+                type="email"
+                value={loginData.email}
                 onChange={(e) => {
                   setLoginData({
                     ...loginData,
@@ -79,8 +78,8 @@ const LoginComponent = () => {
                 User password
               </p>
               <Input.Password
-							  placeholder="************"
-							  value={loginData.password}
+                placeholder="************"
+                value={loginData.password}
                 onChange={(e) => {
                   setLoginData({
                     ...loginData,
