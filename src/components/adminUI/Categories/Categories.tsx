@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Loader from "@/components/Loader/Loader";
 import { useGetCategoriesQuery } from "@/redux/api/performerApi";
-import { Flex, Button, Modal } from "antd";
+import { Flex, Radio, Modal } from "antd";
 import Styles from "./Category.module.css";
 import { useCreateCategoryMutation } from "@/redux/api/adminApi";
 
@@ -11,7 +11,11 @@ type ICategory = {
   category: string;
 };
 
+import CreateQuiz from "./CreateQuiz";
+import { useRouter } from "next/navigation";
+
 const Categories = () => {
+  const router = useRouter();
   const { data, isLoading } = useGetCategoriesQuery(undefined);
   const [createCategory] = useCreateCategoryMutation();
   //create category states
@@ -34,11 +38,6 @@ const Categories = () => {
     }
   };
 
-  const handleCancel = () => {
-    setCategory("");
-    console.log("Clicked cancel button");
-    setCategoryModalOpen(false);
-  };
   return (
     <div>
       <h1>Categories</h1>
@@ -50,8 +49,13 @@ const Categories = () => {
             {data?.result.map((category: ICategory) => (
               <div key={category.id} className={Styles.category_item}>
                 <h3 style={{ padding: "5px 0" }}>{category.category}</h3>
-                <button className={Styles.add_question_btn}>
-                  Add a question
+                <button
+                  className={Styles.add_question_btn}
+                  onClick={() => {
+                    router.push(`create-question/${category.id}`);
+                  }}
+                >
+                  Add a Quiz
                 </button>
               </div>
             ))}
@@ -64,6 +68,7 @@ const Categories = () => {
       >
         Create a Category
       </button>
+      {/* create category modal */}
       <Modal
         title={<h4>Create a category</h4>}
         open={categoryModalOpen}
@@ -71,7 +76,10 @@ const Categories = () => {
         okText={"Create"}
         confirmLoading={categoryCreating}
         okButtonProps={{ disabled: !category && true }}
-        onCancel={handleCancel}
+        onCancel={() => {
+          setCategory("");
+          setCategoryModalOpen(false);
+        }}
       >
         <div>
           <input
