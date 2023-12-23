@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
 import { LogoutOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import Styles from "./layout.module.css";
+import Sidebar from "@/components/authSidebar/Sidebar";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -20,7 +21,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <div className={Styles.content_container}>
           <div className={Styles.sidebar_container}>
             <div className={Styles.sidebar_items_container}>
-              <h1></h1>
+              <Sidebar />
             </div>
           </div>
           <div className={Styles.children_container}>{children}</div>

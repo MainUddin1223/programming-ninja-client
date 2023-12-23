@@ -1,7 +1,11 @@
+import Statics from "@/components/performerStatics/Statics";
+
 const PerformerDashboard = () => {
   return (
     <div>
-      <h1>PerformerDashboard</h1>
+      <div>
+        <Statics />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.profile_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-image: var(--primary);
+  margin-bottom: 10px;
+}
+.nav_item_container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-image: var(--primary);
+}
+.logout_btn {
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
