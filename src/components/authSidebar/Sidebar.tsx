@@ -21,29 +21,31 @@ const getSidebarItems = (role: string) => {
         </div>
         <div className={Styles.nav_item_container}>
           <Link href={"/"}>Home</Link>
-          <Link href={"/performer"}>Dashboard</Link>
-          <Link href={"/performer/give-test"}>Give a Test</Link>
-          <Link href={"/performer/quiz"}>My Tests</Link>
-          <Link href={"/performer/give-test"}>Leader Board</Link>
+          <Link href={`/${role}`}>Dashboard</Link>
+          <Link href={`/${role}/give-test`}>Give a Test</Link>
+          <Link href={`/${role}/quiz`}>My Tests</Link>
+          <Link href={`/${role}/give-test`}>Leader Board</Link>
         </div>
       </div>
     );
   } else if (role == "admin") {
     return (
       <div>
-        <div>
-          <Avatar size={84} icon={<Image src={user} alt="user" />} />
-          <p>Admin</p>
-          <p>Email</p>
-          <p>Rank</p>
+        <div className={Styles.profile_section}>
+          <Avatar size={100} icon={<Image src={user} alt="user" />} />
+             <div>
+            <p>Name : MR Hacker</p>
+            <p>Email: hacker@gmail.com</p>
+            <p>Rank : 10</p>
+          </div>
         </div>
-        <div>
+        <div className={Styles.nav_item_container}>
           <Link href={"/"}>Home</Link>
-          <Link href={"performer/dashboard"}>Categories</Link>
-          <Link href={"performer/give-test"}>Create question</Link>
-          <Link href={"performer/quiz"}>Questions</Link>
-          <Link href={"performer/give-test"}>Leader Board</Link>
-          <Link href={"performer/give-test"}>Performers</Link>
+          <Link href={`/${role}/categories`}>Categories</Link>
+          <Link href={`/${role}/create-question`}>Create question</Link>
+          <Link href={`/${role}/questions`}>Questions</Link>
+          <Link href={`/${role}/leader-board`}>Leader Board</Link>
+          <Link href={`/${role}/performers`}>Performers</Link>
         </div>
       </div>
     );
