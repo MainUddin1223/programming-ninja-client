@@ -1,12 +1,12 @@
-'use client'
-import CreateQuestionCompo from '@/components/adminUI/CreateQuestion/CreateQuestion'
+"use client";
+import CreateQuestionCompo from "@/components/adminUI/CreateQuestion/CreateQuestion";
 
 const CreateQuestion = () => {
   return (
-      <div>
-          <CreateQuestionCompo/>
+    <div>
+      <CreateQuestionCompo />
     </div>
-  )
-}
+  );
+};
 
-export default CreateQuestion
+export default CreateQuestion;

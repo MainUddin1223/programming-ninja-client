@@ -33,7 +33,7 @@ const getSidebarItems = (role: string) => {
       <div>
         <div className={Styles.profile_section}>
           <Avatar size={100} icon={<Image src={user} alt="user" />} />
-             <div>
+          <div>
             <p>Name : MR Hacker</p>
             <p>Email: hacker@gmail.com</p>
             <p>Rank : 10</p>

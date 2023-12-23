@@ -1,0 +1,29 @@
+.category_container {
+  margin-top: 50px;
+}
+.category_item {
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  text-align: center;
+}
+.create_category_btn {
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.add_question_btn {
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 5px 15px;
+  font-weight: bold;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+}

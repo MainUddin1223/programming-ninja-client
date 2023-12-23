@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import CategoriesComponent from "@/components/adminUI/Categories/Categories";
 
 const Categories = () => {
   return (
-    <div>Categories</div>
-  )
-}
+    <div>
+      <CategoriesComponent />
+    </div>
+  );
+};
 
-export default Categories
+export default Categories;

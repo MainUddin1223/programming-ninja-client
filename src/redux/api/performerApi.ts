@@ -2,7 +2,7 @@ import { baseApi } from "./baseApi";
 
 const performerUrl = "/performer";
 
-const authApi = baseApi.injectEndpoints({
+const performerApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getCategories: build.query({
       query: () => ({
@@ -39,4 +39,4 @@ export const {
   useGiveTestMutation,
   useGetTestByIdQuery,
   useGetMyTestsQuery,
-} = authApi;
+} = performerApi;
