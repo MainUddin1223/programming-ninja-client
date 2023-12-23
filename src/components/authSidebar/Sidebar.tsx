@@ -21,7 +21,7 @@ const getSidebarItems = (role: string) => {
           <Link href={"/"}>Home</Link>
           <Link href={"/performer"}>Dashboard</Link>
           <Link href={"/performer/give-test"}>Give a Test</Link>
-          <Link href={"performer/quiz"}>My Tests</Link>
+          <Link href={"/performer/quiz"}>My Tests</Link>
           <Link href={"/performer/give-test"}>Leader Board</Link>
         </div>
       </div>

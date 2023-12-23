@@ -11,6 +11,20 @@ const authApi = baseApi.injectEndpoints({
       }),
       providesTags: ["performer", "admin"],
     }),
+    getTestById: build.query({
+      query: (id) => ({
+        url: `${performerUrl}/my-tests/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["performer"],
+    }),
+    getMyTests: build.query({
+      query: () => ({
+        url: `${performerUrl}/my-tests`,
+        method: "GET",
+      }),
+      providesTags: ["performer"],
+    }),
     giveTest: build.mutation({
       query: (id) => ({
         url: `${performerUrl}/request-test/${id}`,
@@ -20,4 +34,9 @@ const authApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetCategoriesQuery, useGiveTestMutation } = authApi;
+export const {
+  useGetCategoriesQuery,
+  useGiveTestMutation,
+  useGetTestByIdQuery,
+  useGetMyTestsQuery,
+} = authApi;

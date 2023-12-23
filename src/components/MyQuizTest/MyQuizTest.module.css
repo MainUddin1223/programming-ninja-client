@@ -1,0 +1,21 @@
+.test_card {
+  padding: 15px;
+  background-color: var(--secondary);
+  border: 1px solid;
+}
+.test_card_info {
+  font-size: 17px;
+  line-height: 26px;
+}
+.complete_now_btn {
+  display: block;
+  margin: 20px auto;
+  /* background-image: var(--primary); */
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}

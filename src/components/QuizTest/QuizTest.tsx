@@ -1,11 +1,14 @@
 "use client";
 
-import { useGiveTestMutation } from "@/redux/api/performerApi";
+import {
+  useGetTestByIdQuery,
+  useGiveTestMutation,
+} from "@/redux/api/performerApi";
 import { useState } from "react";
 
 const QuizTest = ({ id }: { id: number }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [giveTest] = useGiveTestMutation();
+  const { data, isLoading } = useGetTestByIdQuery(id);
+  console.log(data);
   return <div>QuizTest</div>;
 };
 
