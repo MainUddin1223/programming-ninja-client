@@ -1,0 +1,7 @@
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  width: 0px;
+}

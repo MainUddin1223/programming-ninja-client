@@ -7,7 +7,7 @@ const BackButton = () => {
   return (
     <div style={{ position: "absolute", top: "25px", left: "25px" }}>
       <Button
-        onClick={() => router.back()}
+        onClick={() => router.push("/")}
         style={{ backgroundImage: "var(--primary)", border: "none" }}
       >
         <ArrowLeftOutlined style={{ color: "rgb(224, 223, 223)" }} />

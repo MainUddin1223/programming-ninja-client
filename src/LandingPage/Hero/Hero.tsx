@@ -5,6 +5,7 @@ import python_logo from "@/assets/python_logo.png";
 import php_logo from "@/assets/php_logo.png";
 import tailwind_logo from "@/assets/tailwind_logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -13,7 +14,9 @@ const Hero = () => {
         <h1 className={Styles.slogan}>
           Become an Interview cracker. Give test on you stack and become a Ninja
         </h1>
-        <button className={Styles.start_btn}>Start a Test</button>
+        <Link href={"/performer"}>
+          <button className={Styles.start_btn}>Start a Test</button>
+        </Link>
       </div>
       <Image
         src={react_logo}

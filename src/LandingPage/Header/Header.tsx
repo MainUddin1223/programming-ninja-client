@@ -7,7 +7,9 @@ const Header = () => {
       <div className={Styles.header_container}>
         <h1>Programming Ninja</h1>
         <div className={Styles.header_btn_grp}>
-          <button className={Styles.header_btn}>Get Started</button>
+          <Link href={"/performer"}>
+            <button className={Styles.header_btn}>Get Started</button>
+          </Link>
           <Link href="/login">
             <button className={Styles.header_btn}>Login</button>
           </Link>

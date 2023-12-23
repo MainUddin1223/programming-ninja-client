@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Styles from "./About.module.css";
+import about_img from "@/assets/about_img (1).png";
 const About = () => {
   return (
     <div className={Styles.container}>
@@ -8,6 +10,21 @@ const About = () => {
         It will encourage you to enrich your skills . We also providing the
         leader board where you can find your position.
       </p>
+      <div
+        style={{
+          width: "80%",
+          margin: "0 auto",
+          marginTop: "50px",
+          border: "1px solid",
+        }}
+      >
+        <Image
+          src={about_img}
+          alt="about_img"
+          width={100}
+          layout="responsive"
+        />
+      </div>
     </div>
   );
 };

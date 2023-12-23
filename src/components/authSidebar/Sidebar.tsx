@@ -4,6 +4,8 @@ import Styles from "./Sidebar.module.css";
 import user from "@/assets/user.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { getAuthInfo } from "@/utils/jwt";
+import { useRouter } from "next/navigation";
 
 const getSidebarItems = (role: string) => {
   if (role == "performer") {
@@ -49,7 +51,12 @@ const getSidebarItems = (role: string) => {
 };
 
 const Sidebar = () => {
-  const sidebar = getSidebarItems("performer");
+  const router = useRouter();
+  const authInfo: any = getAuthInfo();
+  if (!authInfo) {
+    router.push("/login");
+  }
+  const sidebar = getSidebarItems(authInfo.role);
   return (
     <div>
       {sidebar}

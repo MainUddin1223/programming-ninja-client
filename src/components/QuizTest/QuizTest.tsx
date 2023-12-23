@@ -1,15 +1,16 @@
 "use client";
+import Styles from "./QuizTest.module.css";
 
-import {
-  useGetTestByIdQuery,
-  useGiveTestMutation,
-} from "@/redux/api/performerApi";
-import { useState } from "react";
+import { useGetTestByIdQuery } from "@/redux/api/performerApi";
+import Loader from "../Loader/Loader";
 
 const QuizTest = ({ id }: { id: number }) => {
   const { data, isLoading } = useGetTestByIdQuery(id);
   console.log(data);
-  return <div>QuizTest</div>;
+  if (isLoading) {
+    return <Loader />;
+  }
+  return <div className={Styles.container}></div>;
 };
 
 export default QuizTest;
