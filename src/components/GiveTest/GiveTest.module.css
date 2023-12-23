@@ -1,0 +1,36 @@
+.category_container {
+  padding: 20px;
+  border: 1px solid;
+  cursor: pointer;
+}
+.category_container:hover {
+  background-image: var(--primary);
+}
+.active_category_bg {
+  background-image: var(--primary);
+}
+.start_test_btn {
+  background-image: var(--primary);
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.disabled_btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgb(222, 207, 207);
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  background-image: var(--primary);
+  opacity: 0.8;
+  cursor: not-allowed;
+}

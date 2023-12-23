@@ -19,10 +19,10 @@ const getSidebarItems = (role: string) => {
         </div>
         <div className={Styles.nav_item_container}>
           <Link href={"/"}>Home</Link>
-          <Link href={"performer/dashboard"}>Dashboard</Link>
-          <Link href={"performer/give-test"}>Give a Test</Link>
+          <Link href={"/performer"}>Dashboard</Link>
+          <Link href={"/performer/give-test"}>Give a Test</Link>
           <Link href={"performer/quiz"}>My Tests</Link>
-          <Link href={"performer/give-test"}>Leader Board</Link>
+          <Link href={"/performer/give-test"}>Leader Board</Link>
         </div>
       </div>
     );
