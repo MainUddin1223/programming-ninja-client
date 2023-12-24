@@ -39,10 +39,10 @@ const getSidebarItems = (role: string, authData: any) => {
         </div>
         <div className={Styles.nav_item_container}>
           <Link href={"/"}>Home</Link>
+          <Link href={`/${role}/`}>Dashboard</Link>
           <Link href={`/${role}/categories`}>Categories</Link>
-          <Link href={`/${role}/questions`}>Questions</Link>
           <Link href={`/${role}/leader-board`}>Leader Board</Link>
-          <Link href={`/${role}/performers`}>Performers</Link>
+          {/* <Link href={`/${role}/performers`}>Performers</Link> */}
         </div>
       </div>
     );

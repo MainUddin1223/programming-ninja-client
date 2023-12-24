@@ -27,7 +27,18 @@ const adminApi = baseApi.injectEndpoints({
       }),
       providesTags: ["performer", "admin"],
     }),
+    getStatics: build.query({
+      query: () => ({
+        url: `${adminUrl}/get-statics`,
+        method: "GET",
+      }),
+      providesTags: ["admin"],
+    }),
   }),
 });
 
-export const { useCreateCategoryMutation, useAddQuizMutation } = adminApi;
+export const {
+  useCreateCategoryMutation,
+  useAddQuizMutation,
+  useGetStaticsQuery,
+} = adminApi;
