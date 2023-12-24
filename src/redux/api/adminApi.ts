@@ -20,6 +20,13 @@ const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["admin"],
     }),
+    getQuestionList: build.query({
+      query: () => ({
+        url: `${adminUrl}/questions`,
+        method: "GET",
+      }),
+      providesTags: ["performer", "admin"],
+    }),
   }),
 });
 

@@ -4,17 +4,19 @@ import user from "@/assets/user.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { getAuthInfo } from "@/utils/jwt";
+import { useAppSelector } from "@/redux/hooks";
+import Logout from "../Logout/Logout";
 
-const getSidebarItems = (role: string) => {
+const getSidebarItems = (role: string, authData: any) => {
   if (role == "performer") {
     return (
       <div>
         <div className={Styles.profile_section}>
           <Avatar size={100} icon={<Image src={user} alt="user" />} />
           <div>
-            <p>Name : MR Hacker</p>
-            <p>Email: hacker@gmail.com</p>
-            <p>Rank : 10</p>
+            <p>Name : {authData.name}</p>
+            <p>Email: {authData.email}</p>
+            <p>Rank : {authData.rank}</p>
           </div>
         </div>
         <div className={Styles.nav_item_container}>
@@ -27,14 +29,14 @@ const getSidebarItems = (role: string) => {
       </div>
     );
   } else if (role == "admin") {
+    console.log(authData);
     return (
       <div>
         <div className={Styles.profile_section}>
           <Avatar size={100} icon={<Image src={user} alt="user" />} />
           <div>
-            <p>Name : MR Hacker</p>
-            <p>Email: hacker@gmail.com</p>
-            <p>Rank : 10</p>
+            <p>Name : {authData.name}</p>
+            <p>Email: {authData.email}</p>
           </div>
         </div>
         <div className={Styles.nav_item_container}>
@@ -51,11 +53,21 @@ const getSidebarItems = (role: string) => {
 
 const Sidebar = () => {
   const authInfo: any = getAuthInfo();
-  const sidebar = getSidebarItems(authInfo.role);
+  const { authData } = useAppSelector((state) => state.authData);
+  const sidebar = getSidebarItems(authInfo.role, authData);
   return (
     <div>
       {sidebar}
-      <button className={Styles.logout_btn}>Logout</button>
+      <Logout>
+        <button
+          className={Styles.logout_btn}
+          onClick={() => {
+            window;
+          }}
+        >
+          Logout
+        </button>
+      </Logout>
     </div>
   );
 };

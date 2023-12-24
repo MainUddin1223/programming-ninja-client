@@ -8,8 +8,11 @@ import { useUserLoginMutation } from "@/redux/api/authApi";
 import { getAuthInfo } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
 import Loader from "../Loader/Loader";
+import { useAppDispatch } from "@/redux/hooks";
+import { addAuthData } from "@/redux/slice/authSlice";
 
 const LoginComponent = () => {
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const [userLogin] = useUserLoginMutation();
@@ -22,12 +25,14 @@ const LoginComponent = () => {
     try {
       setIsLoading(true);
       const res = await userLogin({ ...loginData }).unwrap();
+      console.log(res);
       if (res.success) {
         message.success("User logged in successfully");
         const accessToken = res?.accessToken;
         typeof window !== "undefined" &&
           localStorage.setItem("accessToken", accessToken);
         const authInfo: any = getAuthInfo();
+        dispatch(addAuthData({ email: res.email, name: res.name, rank: 0 }));
         router.push(`${authInfo?.role}/`);
         setIsLoading(false);
       } else {
