@@ -54,6 +54,13 @@ const performerApi = baseApi.injectEndpoints({
       }),
       providesTags: ["performer"],
     }),
+    getMyStatics: build.query({
+      query: () => ({
+        url: `${performerUrl}/my-statics`,
+        method: "GET",
+      }),
+      providesTags: ["performer"],
+    }),
   }),
 });
 
@@ -65,4 +72,5 @@ export const {
   useSubmitAnswerMutation,
   useCompleteTestMutation,
   useGetLeaderBoardQuery,
+  useGetMyStaticsQuery,
 } = performerApi;

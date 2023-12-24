@@ -31,7 +31,7 @@ const LoginComponent = () => {
         typeof window !== "undefined" &&
           localStorage.setItem("accessToken", accessToken);
         const authInfo: any = getAuthInfo();
-        dispatch(addAuthData({ email: res.email, name: res.name, rank: 0 }));
+        dispatch(addAuthData({ email: res.email, name: res.name }));
         router.push(`${authInfo?.role}/`);
         setIsLoading(false);
       } else {

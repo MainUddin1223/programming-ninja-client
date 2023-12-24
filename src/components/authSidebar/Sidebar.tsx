@@ -16,7 +16,6 @@ const getSidebarItems = (role: string, authData: any) => {
           <div>
             <p>Name : {authData.name}</p>
             <p>Email: {authData.email}</p>
-            <p>Rank : {authData.rank}</p>
           </div>
         </div>
         <div className={Styles.nav_item_container}>
