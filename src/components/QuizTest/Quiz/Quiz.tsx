@@ -86,17 +86,23 @@ const Quiz = ({ quiz, id }: { quiz: any; id: number }) => {
             </div>
           ) : (
             <div>
-              <p>Wrong answer !!!</p>
-              <p>
-                Your Answer:{" "}
+              <p style={{ fontWeight: "Bold", fontSize: "17px", color: "red" }}>
+                Wrong answer !!!
+              </p>
+              <p style={{ margin: "15px 0" }}>
+                Your Answer{" "}
                 {quizData.selectedAnswer.map((ans: string, i: number) => (
-                  <p key={i}>{ans},</p>
+                  <p key={i} style={{ margin: "5px 0" }}>
+                    {ans},
+                  </p>
                 ))}
               </p>
-              <p>
+              <p style={{ margin: "15px 0", fontWeight: "bold" }}>
                 Correct Answer:{" "}
                 {quizData.correctAnswer.map((ans: string, i: number) => (
-                  <p key={i}>{ans},</p>
+                  <p key={i} style={{ margin: "5px 0" }}>
+                    {ans},
+                  </p>
                 ))}
               </p>
             </div>

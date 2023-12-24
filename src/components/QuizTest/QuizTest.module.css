@@ -33,3 +33,8 @@
   width: 75%;
   margin: 0 auto;
 }
+.quiz_btn_grp {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
