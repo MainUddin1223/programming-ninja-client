@@ -34,7 +34,6 @@ const GiveTestComponent = () => {
         });
         setIsPreparing(false);
         router.push(`/quiz-test/${res.id}`);
-        console.log(res);
       } else {
         setIsPreparing(false);
         Modal.error({
@@ -54,7 +53,7 @@ const GiveTestComponent = () => {
     <div>
       {isLoading || (isPreparing && <Loader />)}
       <div>
-        <Flex gap={16}>
+        <Flex gap={16} wrap="wrap">
           {data?.result.map((category: ICategory) => (
             <div
               onClick={() => setSelectedCategory(category.id)}

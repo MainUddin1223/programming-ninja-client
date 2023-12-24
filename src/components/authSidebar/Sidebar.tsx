@@ -24,12 +24,11 @@ const getSidebarItems = (role: string, authData: any) => {
           <Link href={`/${role}`}>Dashboard</Link>
           <Link href={`/${role}/give-test`}>Give a Test</Link>
           <Link href={`/${role}/quiz`}>My Tests</Link>
-          <Link href={`/${role}/give-test`}>Leader Board</Link>
+          <Link href={`/${role}/leader-board`}>Leader Board</Link>
         </div>
       </div>
     );
   } else if (role == "admin") {
-    console.log(authData);
     return (
       <div>
         <div className={Styles.profile_section}>

@@ -1,19 +1,51 @@
 "use client";
 import Styles from "./QuizTest.module.css";
 
-import { useGetTestByIdQuery } from "@/redux/api/performerApi";
+import {
+  useCompleteTestMutation,
+  useGetTestByIdQuery,
+} from "@/redux/api/performerApi";
 import Loader from "../Loader/Loader";
 import Quiz from "./Quiz/Quiz";
-import { Button } from "antd";
+import { Button, Modal } from "antd";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const QuizTest = ({ id }: { id: number }) => {
+  const [completeTask] = useCompleteTestMutation();
   const { data, isLoading } = useGetTestByIdQuery(id);
+  const [completing, setCompleting] = useState(false);
   const router = useRouter();
   if (isLoading) {
     return <Loader />;
   }
-  console.log(data);
+
+  const completeHandler = async () => {
+    try {
+      setCompleting(true);
+      const res: any = await completeTask(id);
+      console.log(res);
+      if (res.data.success) {
+        Modal.success({
+          content: "Submission successful",
+        });
+        setCompleting(false);
+        router.push("/performer/quiz");
+      } else {
+        setCompleting(false);
+        Modal.error({
+          content: "Submission failed",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      setCompleting(false);
+      Modal.error({
+        content: "Submission Failed",
+      });
+    }
+  };
+
   return (
     <div className={Styles.container}>
       <div className={Styles.quiz_statics_container}>
@@ -43,13 +75,16 @@ const QuizTest = ({ id }: { id: number }) => {
         </div>
         <div className={Styles.quiz_btn_grp}>
           <Button
+            onClick={completeHandler}
             disabled={
-              data.wrongAnswer + data.rightAnswer !== 10 || data.isCompleted
+              data.wrongAnswer + data.rightAnswer !== 10 ||
+              completing ||
+              data.isCompleted
                 ? true
                 : false
             }
           >
-            Complete
+            {completing ? "Completing" : "Complete"}
           </Button>
           <Button onClick={() => router.push("/performer/quiz")}>
             {data.isCompleted ? "My test" : "Skip now"}

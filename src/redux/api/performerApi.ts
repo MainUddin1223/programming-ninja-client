@@ -40,6 +40,20 @@ const performerApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["performer"],
     }),
+    completeTest: build.mutation({
+      query: (id) => ({
+        url: `${performerUrl}/my-tests/${id}`,
+        method: "PATCH",
+      }),
+      invalidatesTags: ["performer"],
+    }),
+    getLeaderBoard: build.query({
+      query: () => ({
+        url: `${performerUrl}/leader-board`,
+        method: "GET",
+      }),
+      providesTags: ["performer"],
+    }),
   }),
 });
 
@@ -49,4 +63,6 @@ export const {
   useGetTestByIdQuery,
   useGetMyTestsQuery,
   useSubmitAnswerMutation,
+  useCompleteTestMutation,
+  useGetLeaderBoardQuery,
 } = performerApi;
