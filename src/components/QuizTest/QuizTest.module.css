@@ -5,3 +5,31 @@
 .container::-webkit-scrollbar {
   width: 0px;
 }
+.quiz_statics_container {
+  text-align: center;
+  padding: 20px;
+  background-image: var(--primary);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.score_container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  top: 0;
+  z-index: 1;
+}
+
+.score {
+  border: 1px solid;
+  padding: 20px;
+  background-color: var(--secondary);
+  line-height: 25px;
+}
+.question_container {
+  width: 75%;
+  margin: 0 auto;
+}

@@ -30,6 +30,15 @@ const performerApi = baseApi.injectEndpoints({
         url: `${performerUrl}/request-test/${id}`,
         method: "POST",
       }),
+      invalidatesTags: ["performer"],
+    }),
+    submitAnswer: build.mutation({
+      query: (data) => ({
+        url: `${performerUrl}/verify-answer/${data.id}`,
+        method: "PATCH",
+        data: data.answer,
+      }),
+      invalidatesTags: ["performer"],
     }),
   }),
 });
@@ -39,4 +48,5 @@ export const {
   useGiveTestMutation,
   useGetTestByIdQuery,
   useGetMyTestsQuery,
+  useSubmitAnswerMutation,
 } = performerApi;
