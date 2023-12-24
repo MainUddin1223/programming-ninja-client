@@ -8,8 +8,11 @@ import { useRouter } from "next/navigation";
 import { useSignUpMutation } from "@/redux/api/authApi";
 import { getAuthInfo } from "@/utils/jwt";
 import Loader from "../Loader/Loader";
+import { useAppDispatch } from "@/redux/hooks";
+import { addAuthData } from "@/redux/slice/authSlice";
 
 const SignUp = () => {
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const [signUp] = useSignUpMutation();
@@ -28,6 +31,7 @@ const SignUp = () => {
       if (res.success) {
         message.success("User Sign up successfully");
         const accessToken = res?.accessToken;
+        dispatch(addAuthData({ email: res.email, name: res.name, rank: 0 }));
         typeof window !== "undefined" &&
           localStorage.setItem("accessToken", accessToken);
         const authInfo: any = getAuthInfo();

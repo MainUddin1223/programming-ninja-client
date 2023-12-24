@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Loader from "@/components/Loader/Loader";
 import { useRouter } from "next/navigation";
 import { getAuthInfo } from "@/utils/jwt";
+import Logout from "@/components/Logout/Logout";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -32,11 +33,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           <Link href={"/"}>
             <h1 style={{ cursor: "pointer" }}>Programming Ninja</h1>
           </Link>
-          <Avatar
-            style={{ backgroundImage: "var(--primary)", cursor: "pointer" }}
-            size={30}
-            icon={<LogoutOutlined />}
-          />
+          <Logout>
+            <Avatar
+              style={{ backgroundImage: "var(--primary)", cursor: "pointer" }}
+              size={30}
+              icon={<LogoutOutlined />}
+            />
+          </Logout>
         </div>
       </div>
       <div className={Styles.content_section}>

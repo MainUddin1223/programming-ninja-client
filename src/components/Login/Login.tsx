@@ -25,7 +25,6 @@ const LoginComponent = () => {
     try {
       setIsLoading(true);
       const res = await userLogin({ ...loginData }).unwrap();
-      console.log(res);
       if (res.success) {
         message.success("User logged in successfully");
         const accessToken = res?.accessToken;
