@@ -1,4 +1,3 @@
-"use client";
 import MyQuizTest from "@/components/MyQuizTest/MyQuizTest";
 
 const MyQuiz = () => {

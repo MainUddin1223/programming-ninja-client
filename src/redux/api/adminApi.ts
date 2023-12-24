@@ -12,7 +12,15 @@ const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["admin"],
     }),
+    addQuiz: build.mutation({
+      query: (data) => ({
+        url: `${adminUrl}/add-quiz/${data.categoryId}`,
+        method: "POST",
+        data: data.quizData,
+      }),
+      invalidatesTags: ["admin"],
+    }),
   }),
 });
 
-export const { useCreateCategoryMutation } = adminApi;
+export const { useCreateCategoryMutation, useAddQuizMutation } = adminApi;

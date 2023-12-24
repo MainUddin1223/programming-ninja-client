@@ -2,10 +2,13 @@
 
 import QuizTest from "@/components/QuizTest/QuizTest";
 
-const page = () => {
+type IDProps = {
+  params: any;
+};
+const page = ({ params }: IDProps) => {
   return (
     <div>
-      <QuizTest />
+      <QuizTest id={params.id} />
     </div>
   );
 };

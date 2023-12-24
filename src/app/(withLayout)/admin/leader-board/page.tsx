@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 const LeaderBoard = () => {
   return <div>LeaderBoard</div>;

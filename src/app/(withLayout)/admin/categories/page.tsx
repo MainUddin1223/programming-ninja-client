@@ -1,4 +1,3 @@
-import React from "react";
 import CategoriesComponent from "@/components/adminUI/Categories/Categories";
 
 const Categories = () => {

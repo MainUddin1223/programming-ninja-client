@@ -11,7 +11,6 @@ type ICategory = {
   category: string;
 };
 
-import CreateQuiz from "./CreateQuiz";
 import { useRouter } from "next/navigation";
 
 const Categories = () => {

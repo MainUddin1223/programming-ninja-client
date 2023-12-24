@@ -1,11 +1,9 @@
-"use client";
 import { Avatar } from "antd";
 import Styles from "./Sidebar.module.css";
 import user from "@/assets/user.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { getAuthInfo } from "@/utils/jwt";
-import { useRouter } from "next/navigation";
 
 const getSidebarItems = (role: string) => {
   if (role == "performer") {
@@ -42,7 +40,6 @@ const getSidebarItems = (role: string) => {
         <div className={Styles.nav_item_container}>
           <Link href={"/"}>Home</Link>
           <Link href={`/${role}/categories`}>Categories</Link>
-          <Link href={`/${role}/create-question`}>Create question</Link>
           <Link href={`/${role}/questions`}>Questions</Link>
           <Link href={`/${role}/leader-board`}>Leader Board</Link>
           <Link href={`/${role}/performers`}>Performers</Link>
@@ -53,11 +50,7 @@ const getSidebarItems = (role: string) => {
 };
 
 const Sidebar = () => {
-  const router = useRouter();
   const authInfo: any = getAuthInfo();
-  if (!authInfo) {
-    router.push("/login");
-  }
   const sidebar = getSidebarItems(authInfo.role);
   return (
     <div>

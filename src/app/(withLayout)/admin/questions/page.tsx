@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 const Questions = () => {
   return <div>Questions</div>;
