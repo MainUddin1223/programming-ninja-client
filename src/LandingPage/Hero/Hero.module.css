@@ -16,18 +16,26 @@
 }
 .slogan {
   font-size: 3rem;
-  background: var(--primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   line-height: 75px;
 }
 .start_btn {
   background-image: var(--primary);
   color: rgb(222, 207, 207);
-  padding: 10px 30px;
+  padding: 15px 45px;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 21px;
   border: none;
   cursor: pointer;
   margin: 10px 0;
+  transition-duration: 0.5s;
+}
+.start_btn:hover {
+  background-image: var(--hover-color);
+}
+
+@media only screen and (max-width: 498px) {
+  /* Styles for medium devices */
+}
+@media only screen and (min-width: 499px) and (max-width: 767px) {
+  /* Styles for medium devices */
 }

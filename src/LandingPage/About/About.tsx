@@ -11,12 +11,7 @@ const About = () => {
         leader board where you can find your position.
       </p>
       <div
-        style={{
-          width: "80%",
-          margin: "0 auto",
-          marginTop: "50px",
-          border: "1px solid",
-        }}
+        className={Styles.image_container}
       >
         <Image
           src={about_img}

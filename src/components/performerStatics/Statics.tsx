@@ -12,6 +12,11 @@ const Statics = () => {
   const { data, isLoading } = useGetMyStaticsQuery(undefined);
   const dispatch = useAppDispatch();
 
+  const calculateData = (total:number,divide:number) => {
+    const average = (total / divide).toFixed(2);
+    return Number(average)
+    }
+
   const conicColors = {
     "0%": "#9930ef",
     "20%": "#5942cb",
@@ -163,8 +168,7 @@ const Statics = () => {
                     <p>Quiz Completed</p>
                     <Progress
                       percent={
-                        (Number(totalCompletedTest) * 100) /
-                        (Number(totalCompletedTest) + Number(totalPendingTest))
+                        calculateData(Number((Number(totalCompletedTest) * 100)),Number(totalCompletedTest) + Number(totalPendingTest))
                       }
                       size="small"
                       strokeWidth={15}
@@ -175,8 +179,7 @@ const Statics = () => {
                     <p>Correct Answer</p>
                     <Progress
                       percent={
-                        (Number(totalRightAnswer) * 100) /
-                        (Number(totalRightAnswer) + Number(totalWrongAnswer))
+                        calculateData(Number(totalRightAnswer) * 100,Number(totalRightAnswer) + Number(totalWrongAnswer))
                       }
                       size="small"
                       strokeWidth={15}
@@ -186,9 +189,8 @@ const Statics = () => {
                   <div>
                     <p>Wrong Answer</p>
                     <Progress
-                      percent={
-                        (Number(totalWrongAnswer) * 100) /
-                        (Number(totalRightAnswer) + Number(totalWrongAnswer))
+                         percent={
+                        calculateData(Number(totalWrongAnswer) * 100,Number(totalRightAnswer) + Number(totalWrongAnswer))
                       }
                       size="small"
                       strokeWidth={15}
@@ -203,14 +205,13 @@ const Statics = () => {
                     size={220}
                     strokeWidth={7}
                     type="circle"
-                    percent={
-                      ((Number(totalRightAnswer) * 100) /
+                       percent={
+                        calculateData((Number(totalRightAnswer) * 100) /
                         (Number(totalRightAnswer) + Number(totalWrongAnswer)) +
                         (Number(totalCompletedTest) * 100) /
                           (Number(totalCompletedTest) +
-                            Number(totalPendingTest))) /
-                      2
-                    }
+                            Number(totalPendingTest)),2)
+                      }
                     strokeColor={conicColors}
                   />
                 </div>

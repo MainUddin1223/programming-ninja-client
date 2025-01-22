@@ -8,8 +8,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
+
   return (
     <div className={Styles.container}>
+      <div>
+      </div>
       <div className={Styles.slogan_container}>
         <h1 className={Styles.slogan}>
           Become an Interview cracker. Give test on you stack and become a Ninja

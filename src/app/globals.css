@@ -1,6 +1,7 @@
 :root {
   /* --primary: linear-gradient(to right, #4816c6, #5e43cb, #3f5bae, #632795); */
   --primary: linear-gradient(to left, #9930ef, #5942cb, #795ceb);
+  --hover-color: linear-gradient(to left, #9930efee, #5942cbee, #795cebee);
   --secondary: rgb(59, 17, 98);
 }
 * {
@@ -13,11 +14,27 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #070d17;
+  background-color: #071c3a;
   color: rgb(224, 223, 223);
 }
 
 a {
   color: rgb(224, 223, 223);
   text-decoration: none;
+}
+
+@media only screen and (max-width: 498px) {
+  /* Styles for medium devices */
+}
+@media only screen and (min-width: 499px) and (max-width: 767px) {
+  /* Styles for medium devices */
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* Styles for medium devices */
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* Styles for large devices */
+}
+@media only screen and (min-width: 1200px) {
+  /* Styles for extra large devices */
 }

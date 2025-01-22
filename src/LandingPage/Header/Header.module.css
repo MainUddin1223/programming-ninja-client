@@ -22,3 +22,28 @@
   border: none;
   cursor: pointer;
 }
+@media only screen and (max-width: 498px) {
+  .header_section {
+    padding: 10px 10px;
+  }
+  .header_container h1 {
+    font-size: 19px;
+  }
+  .header_btn {
+    background-image: var(--primary);
+    color: rgb(222, 207, 207);
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  .login_btn {
+    display: none;
+  }
+}
+@media only screen and (min-width: 499px) and (max-width: 767px) {
+  .login_btn {
+    display: none;
+  }
+}

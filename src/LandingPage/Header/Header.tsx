@@ -4,6 +4,7 @@ import Styles from "./Header.module.css";
 import { getAuthInfo } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Modal } from "antd";
 
 const Header = () => {
   const router = useRouter();
@@ -13,8 +14,7 @@ const Header = () => {
     if (authData) {
       setUrl(authData.role);
     }
-  }, [router]);
-  const authData = getAuthInfo();
+  }, [router])
   return (
     <div className={Styles.header_section}>
       <div className={Styles.header_container}>
@@ -23,7 +23,7 @@ const Header = () => {
           <Link href={url}>
             <button className={Styles.header_btn}>Get Started</button>
           </Link>
-          <Link href="/login">
+          <Link href="/login" className={Styles.login_btn}>
             <button className={Styles.header_btn}>Login</button>
           </Link>
         </div>

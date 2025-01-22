@@ -1,5 +1,4 @@
 .container {
-  padding: 10px 20px;
   width: 75%;
   margin: 50px auto;
 }
@@ -18,4 +17,14 @@
 }
 .category_card:hover {
   box-shadow: #5942cb6c 0px 3px 12px;
+}
+@media only screen and (max-width: 498px) {
+  .container {
+    padding: 10px 20px;
+    width: 100%;
+    margin: 50px auto;
+  }
+}
+@media only screen and (min-width: 499px) and (max-width: 767px) {
+  /* Styles for medium devices */
 }

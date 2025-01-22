@@ -5,8 +5,9 @@ const Category = () => {
   return (
     <div className={Styles.container}>
       <h1 className={Styles.category_header}>
-        Check how good you are Select your technology
+        Test how good you are
       </h1>
+      <p>Choose your preferable category and give a quick test and be top in leader board</p>
       <div>
         <Row gutter={[20, 20]}>
           <Col xs={12} sm={8} md={8} lg={6}>

@@ -7,3 +7,20 @@
   font-size: 2.2rem;
   margin-bottom: 25px;
 }
+.image_container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid;
+}
+@media only screen and (max-width: 498px) {
+  .image_container {
+    width: 100%;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}
+@media only screen and (min-width: 499px) and (max-width: 767px) {
+  /* Styles for medium devices */
+}
